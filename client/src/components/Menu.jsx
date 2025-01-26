@@ -42,9 +42,9 @@ const Menu = () => {
     return (
         <div>
             <div className="flex justify-center space-x-4 mb-4 mt-8">
-                {menu.map((item) => (
+                {menu.map((item,index) => (
                     <button
-                        key={item.id}
+                        key={index}
                         className={`font-bold px-4 py-2 rounded ${activeButton === item._id ? 'bg-blue-500 text-white' : 'bg-black text-blue-500 border border-blue-500'}`}
                         onClick={() => handleButtonClick(item._id)}
                     >
@@ -57,8 +57,8 @@ const Menu = () => {
                 <p className="text-center text-gray-500">{menu.find((item) => item._id === activeButton)?.description} </p>
                 <hr className='my-2' />
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4 overflow-auto max-h-96">
-                    {menuItems.map((item) => (
-                        <div key={item.id} className="w-full">
+                    {menuItems.map((item,index) => (
+                        <div key={index} className="w-full">
                             <div className="flex sm:flex-row justify-between py-4 px-4 mb-2">
                                 <div>
                                     <h2 className="text-lg font-bold">{item.name}</h2>
