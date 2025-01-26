@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { assets } from '../assets/assets'
 
 const Nav = () => {
@@ -10,7 +11,7 @@ const Nav = () => {
     },
     {
         title: 'MENU',
-        link: '#',
+        link: '/admin',
     },
     {
         title: 'MAKE A RESERVATION',
@@ -47,7 +48,7 @@ const Nav = () => {
                             className={`cursor-pointer ${activeIndex === index ? 'text-blue-500' : 'hover:text-blue-500'}`}
                             onClick={() => handleClick(index)}
                         >
-                            {item.title}
+                            <Link to={item.link}>{item.title}</Link>
                         </li>
                     ))}
                 </ul>
