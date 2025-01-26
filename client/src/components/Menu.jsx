@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import axios from 'axios'
+import {API_URL} from '../config/api'
 
 const Menu = () => {
     const [activeButton, setActiveButton] = useState();
@@ -13,7 +14,7 @@ const Menu = () => {
     };
 
     useEffect(() => {
-        axios.get('http://localhost:3000/getMenu')
+        axios.get(`${API_URL}/getMenu`)
             .then(response => {
                 console.log(response.data);
                 setMenu(response.data);
@@ -27,7 +28,7 @@ const Menu = () => {
 
     useEffect(() => {
         if (activeButton) {
-            axios.get(`http://localhost:3000/getMenuItems/${activeButton}`)
+            axios.get(`${API_URL}/getMenuItems/${activeButton}`)
                 .then(response => {
                     console.log(response.data);
                     setMenuItems(response.data);

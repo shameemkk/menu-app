@@ -1,7 +1,6 @@
-// AddMenu.js
 import React, { useState } from 'react';
 import axios from 'axios';
-
+import {API_URL} from '../config/api';
 const AddMenu = () => {
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
@@ -13,7 +12,7 @@ const AddMenu = () => {
     setSuccess(null);
     event.preventDefault();
     const menu = {name:name,description:description};
-    axios.post('http://localhost:3000/addMenu', menu)
+    axios.post(`${API_URL}/addMenu`, menu)
       .then((response) => {
         setSuccess('Menu item added successfully!');
         setName('');

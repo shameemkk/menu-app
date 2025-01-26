@@ -6,7 +6,7 @@ const Nav = () => {
     const [activeIndex, setActiveIndex] = useState(null);
     const NavItems = [{
         title: 'HOME',
-        link: '#',
+        link: '/',
     },
     {
         title: 'MENU',
